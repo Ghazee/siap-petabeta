@@ -1,0 +1,104 @@
+<!doctype html>
+<html class="no-js">
+	<head>
+		<link rel="stylesheet" href="css/index.css" />
+		<script src="js/core.js"></script>
+		<script src="js/index.js"></script>
+		
+		
+	</head>
+	<body>
+		<!-- HALAMAN CARI START -->
+		<div data-role="page" id="page_cari">
+			<div data-theme="b" data-role="header" data-position="fixed">
+				<h3> SIAP PETA </h3>
+			</div>
+			<div data-role="content">
+				<form action="">
+					<div data-role="fieldcontain" class="propinsi_1">
+						<label for="propinsi_1"> Propinsi : </label>
+						<select id="propinsi"></select>
+						<br />
+						<label for="propinsi_1"> Kabupaten / Kota : </label>
+						<select id="kota"></select>
+						<script>
+							siap.cascade('propinsi', 'kota', {
+								parentOptions : siap.master.propinsi,
+								childOptions : siap.master.lokasi
+							});
+						</script>
+					</div>
+
+					<div data-role="fieldcontain">
+						<label for="selectmenu3"> Jenjang : </label>
+						<select data-native-menu="false" id="k_jenjang" name="k_jenjang">
+							<option value="0">Jenjang</option>
+							<option value="1">SD/MI</option>
+							<option value="2">SMP/MTs</option>
+							<option value="3">SMA/MA</option>
+							<option value="4">SMK/MAK</option>
+						</select>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="selectmenu4"> Status : </label>
+						<select data-native-menu="false" id="k_jenjanghh" name="k_jenjanghh">
+							<option value="0">Status</option>
+							<option value="1">Negeri di bawah Dinas</option>
+							<option value="2">Swasta di bawah Dinas</option>
+							<option value="3">Kejuruan Negeri</option>
+							<option value="4">Kejuruan Swasta</option>
+							<option value="5">Negeri di bawah Depag</option>
+							<option value="6">Swasta di bawah Depag</option>
+						</select>
+					</div>
+					<input type="submit" data-theme="b" data-icon="search" data-iconpos="left"
+					value="CARI" data-mini="true">
+				</form>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="b">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a data-role="button" id="nav_cari" data-icon="search" data-transition="none" data-theme="b">Cari Sekolah</a>
+						</li>
+						<li>
+							<a data-role="button" id="nav_berita" href="#page-map" data-icon="info" data-transition="none" data-theme="b">Petunjuk Arah</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="page-map" data-role="page">
+			<div data-theme="b" data-role="header" data-position="fixed">
+				<h3>SIAP PETA</h3>
+			</div>
+			<div data-role="content">
+				<div class="ui-bar-c ui-corner-all ui-shadow" style="padding:1em;">
+					<div id="map_canvas" style="height:350px;"></div>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="target-dest">Tujuan:</label>
+					<input type="text" name="target-dest" id="target-dest" value=""  />
+				</div>
+				<a href="#" id="directions-button" data-role="button" data-inline="true" data-mini="true">Dapatkan Petunjuk Arah</a>
+				<div id="results" style="display:none;">
+					<div id="directions"></div>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="b">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a data-role="button" id="nav_cari" href="#page_cari" data-icon="search" data-transition="none" data-theme="b">Cari Sekolah</a>
+						</li>
+						<li>
+							<a data-role="button" id="nav_berita" href="#page-map" data-icon="info" data-transition="none" data-theme="b">Petunjuk Arah</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+</body>
+</html>
